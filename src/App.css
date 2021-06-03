@@ -1,4 +1,4 @@
-.login {
+.login, .home {
     flex-direction: column !important;
     width: 400px;
     align-items: center;
@@ -7,6 +7,9 @@
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+  .home {
+    width: 100%;
   }
   
 

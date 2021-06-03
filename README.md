@@ -6,7 +6,7 @@ from 3rd party API <Link href="https://fakestoreapi.com/products">Fake Store API
 
 
 
-##Features
+## Features
 1. Implemented Firebase authentication
 2. Load data from 3rd party API
 3. Product deatails page

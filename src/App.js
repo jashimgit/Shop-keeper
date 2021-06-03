@@ -16,7 +16,7 @@ function App() {
           <Navbar />
           <Switch>
             
-            <PrivateRoute path="/product-details/:id">
+            <PrivateRoute path="/product-details/:productId">
               <ProductDetails />
             </PrivateRoute>
             <Route path="/login">
