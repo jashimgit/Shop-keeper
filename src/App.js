@@ -7,6 +7,7 @@ import ProductsList from "./components/pages/ProductsList";
 import Login from "./components/auth/Login";
 import { ProvideAuth } from "./components/auth/Auth";
 import PrivateRoute from "./components/auth/PrivateRoute";
+import NotFound from "./components/pages/NotFound";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
             <PrivateRoute path="/products">
               <ProductsList />
             </PrivateRoute>
+            <Route path="*">
+              <NotFound />
+            </Route>
             <Route exact path="/">
               <Home />
             </Route>
