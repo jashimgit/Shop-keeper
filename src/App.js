@@ -26,11 +26,12 @@ function App() {
             <PrivateRoute path="/products">
               <ProductsList />
             </PrivateRoute>
-            <Route path="*">
-              <NotFound />
-            </Route>
+           
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route  path="*">
+              <NotFound />
             </Route>
           </Switch>
         </Router>
