@@ -1,5 +1,7 @@
 ## Shop Keeper React Redux project
 
+Live link: https://shop-keeper-d24ce.web.app/
+
 `Shop Keeper is a react-redux app created for learning purpose, Here data has been loaded 
 from 3rd party API <Link href="https://fakestoreapi.com/products">Fake Store API</Link>`
 

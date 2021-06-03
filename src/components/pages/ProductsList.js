@@ -28,7 +28,7 @@ export default function ProductsList() {
     const { id, title, image, price, category } = product;
 
     return (
-      <div className="col-md-3 pb-4" key={id}>
+      <div className="col-sm-12 col-md-3 pb-4" key={id}>
         <Link to={`/product-details/${id}`}>
           <div className="card h-100">
             <img src={image} className="card-img-top" alt={title} />
