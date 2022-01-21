@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import { ProvideAuth } from "./components/auth/Auth";
+// import { ProvideAuth } from "./components/auth/Auth";
 import Login from "./components/auth/Login";
-import PrivateRoute from "./components/auth/PrivateRoute";
+// import PrivateRoute from "./components/auth/PrivateRoute";
 import Home from "./components/pages/Home";
 import Navbar from "./components/pages/Navbar";
 import NotFound from "./components/pages/NotFound";
@@ -11,33 +11,31 @@ import ProductsList from "./components/pages/ProductsList";
 
 function App() {
   return (
-    <ProvideAuth>
+    <>
       <div className="App">
         <Router>
           <Navbar />
           <Switch>
-            
-            <PrivateRoute path="/product-details/:productId">
+            <Route path="/product-details/:productId">
               <ProductDetails />
-            </PrivateRoute>
+            </Route>
             <Route path="/login">
               <Login />
             </Route>
-            <PrivateRoute path="/products">
+            <Route path="/products">
               <ProductsList />
-            </PrivateRoute>
-           
+            </Route>
+
             <Route exact path="/">
               <Home />
             </Route>
-            <Route  path="*">
+            <Route path="*">
               <NotFound />
             </Route>
           </Switch>
         </Router>
       </div>
-      </ProvideAuth>
-   
+    </>
   );
 }
 

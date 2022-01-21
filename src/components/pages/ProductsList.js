@@ -47,11 +47,7 @@ export default function ProductsList() {
     <div className="container mt-5">
       <div className="row">
         {Object.keys(products).length === 0 ? (
-          <div className="d-flex justify-content-center">
-            <div className="spinner-border text-primary" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div>
+          <div class="loader"></div>
         ) : (
           renderList
         )}

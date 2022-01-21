@@ -1,9 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../auth/Auth";
 
 export default function Navbar() {
-  
   const auth = useAuth();
   const history = useHistory();
 
@@ -32,33 +32,17 @@ export default function Navbar() {
                 Home <span className="sr-only">(current)</span>
               </Link>
             </li>
-            {auth.user.displayName ? (
-              <>
-              <li className="nav-item">
-                <Link  className="nav-link"  to="/products">Products</Link> 
-              </li>
-              <li className="nav-item">
-              <Link  className="nav-link"  to="/profile">{auth.user.displayName}</Link> 
-              </li>
-              <li className="nav-item">
-              <button
-                  type="button"
-                  className="btn btn-danger btn-sm logoutBtn"
-                  onClick={() => auth.signout(() => history.push("/"))}
-                >
-                  Log Out
-                </button>
-              </li>
-              
-              </>
-            ) : (
-             
 
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">Login </Link>
-              </li>
-              
-            )}
+            <li className="nav-item">
+              <Link className="nav-link" to="/products">
+                Products
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/profile">
+                John Doe
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
