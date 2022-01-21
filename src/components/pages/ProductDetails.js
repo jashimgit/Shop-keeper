@@ -8,26 +8,27 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import {
   removeSelectedProduct,
-  selectedProduct,
+  fetchProduct,
 } from "../../redux/actions/productAction";
 
 export default function ProductDetails() {
   const { productId } = useParams();
-  console.log(productId);
+
   const product = useSelector((state) => state.product);
-  const { id, title, image, price, description, category } = product;
+  const { title, image, price, description, category } = product;
   const dispatch = useDispatch();
-  const fetchProductDetails = async () => {
-    const response = await axios
-      .get(`https://fakestoreapi.com/products/${productId}`)
-      .catch((err) => {
-        console.log("API Error :", "Something happend on the API");
-      });
-    dispatch(selectedProduct(response.data));
-  };
+
+  // const fetchProductDetails = async () => {
+  //   const response = await axios
+  //     .get(`https://fakestoreapi.com/products/${productId}`)
+  //     .catch((err) => {
+  //       console.log("API Error :", "Something happend on the API");
+  //     });
+  //   dispatch(selectedProduct(response.data));
+  // };
 
   useEffect(() => {
-    if (productId && productId !== "") fetchProductDetails();
+    if (productId && productId !== "") dispatch(fetchProduct(productId));
     return () => {
       dispatch(removeSelectedProduct());
     };

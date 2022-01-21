@@ -16,7 +16,7 @@ function App() {
         <Router>
           <Navbar />
           <Switch>
-            <Route path="/product-details/:productId">
+            <Route path="/product/:productId">
               <ProductDetails />
             </Route>
             <Route path="/login">

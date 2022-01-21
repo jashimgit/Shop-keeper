@@ -4,24 +4,24 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { setProducts } from "../../redux/actions/productAction";
+import { setProducts, fetchProducts } from "../../redux/actions/productAction";
 export default function ProductsList() {
   const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
 
   // fetch products from API
 
-  const fetchProducts = async () => {
-    const response = await axios
-      .get("https://fakestoreapi.com/products")
-      .catch((err) => {
-        console.log("Error :", err);
-      });
-    dispatch(setProducts(response.data));
-  };
+  // const fetchProducts = async () => {
+  //   const response = await axios
+  //     .get("https://fakestoreapi.com/products")
+  //     .catch((err) => {
+  //       console.log("Error :", err);
+  //     });
+  //   dispatch(setProducts(response.data));
+  // };
 
   useEffect(() => {
-    fetchProducts();
+    dispatch(fetchProducts());
   }, []);
 
   const renderList = products?.map((product) => {
@@ -29,7 +29,7 @@ export default function ProductsList() {
 
     return (
       <div className="col-sm-12 col-md-3 pb-4" key={id}>
-        <Link to={`/product-details/${id}`}>
+        <Link to={`/product/${id}`}>
           <div className="card h-100">
             <img src={image} className="card-img-top" alt={title} />
             <div className="card-body">
